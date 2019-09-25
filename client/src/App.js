@@ -3,6 +3,7 @@ import './App.css';
 import HomePage from './components/HomePage/HomePage';
 import { BrowserRouter, Route } from 'react-router-dom';
 import PersonalInfo from "./components/PersonalInfo/PersonalInfo";
+import Skills from "./components/Skills/Skills";
 
 function App() {
     return (

@@ -2,7 +2,7 @@ import React from 'react';
 import "./PersonalInfo.css";
 import Button from "../UI/Button/Button";
 
-const PersonalInfo = () => {
+const PersonalInfo = (props) => {
 
     const createSelectItems = () => {
         let items = [];
@@ -10,25 +10,32 @@ const PersonalInfo = () => {
             items.push(<option key={i} value={i}>{i}</option>);
         }
         return items;
-    }
+    };
+
+    const clickHandler = () => {
+
+    };
 
     return (
         <div id="PersonalInfo">
             <p>اطلاعات فردی خودتونو وارد کنید</p>
             <form id="form-wrapper">
-                <input placeholder="نام و نام خانوادگی" autoComplete="off" type="text" name="fname" />
-                <input placeholder="عنوان شغلی" type="text" name="jobTitle" /><br />
-                <label>جنسیت: </label>
-                <select >
-                    <option>مرد</option>
-                    <option>زن</option>
+                    <input placeholder="نام و نام خانوادگی" autoComplete="off" type="text" name="fullName" required/><br />
+                    <input placeholder="عنوان شغلی" type="text" name="jobTitle" /><br />
+                    <label>جنسیت: </label>
+                    <select >
+                        <option>مرد</option>
+                        <option>زن</option>
 
-                </select>
-                <label id="yearLabel">سال تولد: </label>
-                <select>
-                    {createSelectItems()}
-                </select>
+                    </select><br />
+                    <label id="yearLabel">سال تولد: </label>
+                    <select>
+                        {createSelectItems()}
+                    </select><br />
             </form>
+            <Button bgColor="#0099ff" color="white" clicked={clickHandler}>
+                مرحله بعد
+            </Button>
         </div>
     );
 };

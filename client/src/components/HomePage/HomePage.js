@@ -20,7 +20,7 @@ class HomePage extends Component {
                 }
             });
             console.log('startClickHandler', this.state);
-            setTimeout(()=>{
+            setTimeout(() => {
                 this.props.history.push("/personalinfo");
 
             } , 200);

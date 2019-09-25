@@ -1,32 +1,42 @@
 #PersonalInfo {
-    width: 95%;
-    padding: 30px;
-    margin: 300px auto;
+    width: 60%;
+    padding: 1px;
+    margin: 0 auto;
+    transform: translateY(25%);
     /*border: 5px solid #4BAEA0;*/
     border-radius: 20px;
-    box-shadow: 0px 0px 10px #a6a6a6;
+    box-shadow: 0px 0px 50px #e6e6e6;
     transition: all 0.3s linear;
+    background-color: white;
     direction: rtl;
     opacity: 1;
 }
 
 #PersonalInfo p {
-    font-size: 30px;
-    margin-bottom: 100px;
-    margin-top: 100px;
+    font-size: 2rem;
+    margin :50px 30%;
+    text-align: center;
 }
 
 #PersonalInfo #form-wrapper {
+    text-align: center;
+    width: 35%;
+    margin: 0 auto;
 }
 
+
 #PersonalInfo #form-wrapper input{
-    margin-right:16px; 
     margin-bottom: 32px;
+    padding: 8px;
     border: none;
+    border-radius: 10px;
     outline: none;
-    background-color: #f1f1f1;
+    background-color: #e6e6e6;
     height: 50px;
-    width: 500px;   
+    width: 100%;
+    font-size: 1.1rem;
+    font-family: nazanin;
+    text-align: center;
 }
 
 #PersonalInfo #form-wrapper input:focus{
@@ -35,24 +45,32 @@
 #PersonalInfo #form-wrapper label,
 #PersonalInfo #form-wrapper option,
 #PersonalInfo #form-wrapper select{
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 #PersonalInfo #form-wrapper label{
-    margin-right: 16px;
-}
-#PersonalInfo #form-wrapper #yearLabel{
-    margin-right: 280px;
+    float: right;
+    font-size: 1.3rem;
+    /*margin-right: 100px;*/
 }
 
-#PersonalInfo #form-wrapper select{
+#PersonalInfo #form-wrapper  select{
     padding: 5px;
-    width: 10%;
+    width: 20%;
     background-color: #f1f1f1;
     outline: none;
+    margin-bottom: 32px;
 }
 #PersonalInfo #form-wrapper input::-webkit-input-placeholder,
-#PersonalInfo #form-wrapper input::-moz-placeholder{
-    font-size: 1.3rem;
+#PersonalInfo #form-wrapper input::-moz-placeholder,
+#PersonalInfo #form-wrapper input::-ms-input-placeholder {
+    font-size: 2rem;
     font-family: nazanin;
+}
+
+#PersonalInfo button {
+    margin-right: 50%;
+    transform: translateX(150px);
+    margin-top: 32px;
+    margin-bottom: 32px;
 }
