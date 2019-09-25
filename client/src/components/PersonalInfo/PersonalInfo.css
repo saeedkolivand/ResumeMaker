@@ -1,0 +1,58 @@
+#PersonalInfo {
+    width: 95%;
+    padding: 30px;
+    margin: 300px auto;
+    /*border: 5px solid #4BAEA0;*/
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px #a6a6a6;
+    transition: all 0.3s linear;
+    direction: rtl;
+    opacity: 1;
+}
+
+#PersonalInfo p {
+    font-size: 30px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+
+#PersonalInfo #form-wrapper {
+}
+
+#PersonalInfo #form-wrapper input{
+    margin-right:16px; 
+    margin-bottom: 32px;
+    border: none;
+    outline: none;
+    background-color: #f1f1f1;
+    height: 50px;
+    width: 500px;   
+}
+
+#PersonalInfo #form-wrapper input:focus{
+    border-bottom: 1px solid rgb(105, 105, 105);
+}
+#PersonalInfo #form-wrapper label,
+#PersonalInfo #form-wrapper option,
+#PersonalInfo #form-wrapper select{
+    font-size: 1.3rem;
+}
+
+#PersonalInfo #form-wrapper label{
+    margin-right: 16px;
+}
+#PersonalInfo #form-wrapper #yearLabel{
+    margin-right: 280px;
+}
+
+#PersonalInfo #form-wrapper select{
+    padding: 5px;
+    width: 10%;
+    background-color: #f1f1f1;
+    outline: none;
+}
+#PersonalInfo #form-wrapper input::-webkit-input-placeholder,
+#PersonalInfo #form-wrapper input::-moz-placeholder{
+    font-size: 1.3rem;
+    font-family: nazanin;
+}
