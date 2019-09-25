@@ -59,6 +59,7 @@
     width: 20%;
     background-color: #f1f1f1;
     outline: none;
+<<<<<<< HEAD
     margin-bottom: 32px;
 }
 #PersonalInfo #form-wrapper input::-webkit-input-placeholder,
@@ -73,4 +74,6 @@
     transform: translateX(150px);
     margin-top: 32px;
     margin-bottom: 32px;
+=======
+>>>>>>> PersonalInfo layout fixed
 }

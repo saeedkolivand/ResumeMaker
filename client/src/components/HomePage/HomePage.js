@@ -23,7 +23,7 @@ class HomePage extends Component {
             setTimeout(() => {
                 this.props.history.push("/personalinfo");
 
-            } , 200);
+            } , 300);
         };
         return (
             <div id="HomePage" style={this.state.transFlag ? {transform: "translateX(500px)" , opacity:0} : null}>
