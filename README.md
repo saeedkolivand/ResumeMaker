@@ -1,2 +1,2 @@
 # ResumeMaker
-a tool for making persian reume
+a tool for making persian resume
