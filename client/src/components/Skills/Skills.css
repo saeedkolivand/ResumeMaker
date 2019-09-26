@@ -1,0 +1,17 @@
+#skills {
+    width: 40%;
+    box-sizing: border-box;
+    padding: 1px;
+    box-shadow: 0px 0px 50px #e6e6e6;
+    margin: 0 auto;
+    text-align: center;
+    transform: translateY(50%);
+    border-radius: 20px;
+    transition: all 0.3s linear;
+    direction: rtl;
+}
+#skills p {
+    font-size: 2rem;
+    margin: 50px 30%;
+    text-align: center;
+}

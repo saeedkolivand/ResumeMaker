@@ -14,7 +14,7 @@
 
 #PersonalInfo p {
     font-size: 2rem;
-    margin :50px 30%;
+    margin: 50px 30%;
     text-align: center;
 }
 
@@ -24,48 +24,18 @@
     margin: 0 auto;
 }
 
-
-#PersonalInfo #form-wrapper input{
+#PersonalInfo #form-wrapper input {
     margin-bottom: 32px;
-    padding: 8px;
-    border: none;
-    border-radius: 10px;
-    outline: none;
-    background-color: #e6e6e6;
-    height: 50px;
-    width: 100%;
-    font-size: 1.1rem;
-    font-family: nazanin;
-    text-align: center;
 }
 
-#PersonalInfo #form-wrapper input:focus{
-    border-bottom: 1px solid rgb(105, 105, 105);
-}
-#PersonalInfo #form-wrapper label,
-#PersonalInfo #form-wrapper option,
-#PersonalInfo #form-wrapper select{
-    font-size: 1rem;
-}
-
-#PersonalInfo #form-wrapper label{
+#PersonalInfo #form-wrapper label {
     float: right;
     font-size: 1.3rem;
     /*margin-right: 100px;*/
 }
 
-#PersonalInfo #form-wrapper  select{
-    padding: 5px;
-    width: 20%;
-    background-color: #f1f1f1;
-    outline: none;
+#PersonalInfo #form-wrapper select {
     margin-bottom: 32px;
-}
-#PersonalInfo #form-wrapper input::-webkit-input-placeholder,
-#PersonalInfo #form-wrapper input::-moz-placeholder,
-#PersonalInfo #form-wrapper input::-ms-input-placeholder {
-    font-size: 2rem;
-    font-family: nazanin;
 }
 
 #PersonalInfo button {
