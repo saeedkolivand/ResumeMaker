@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import "./PersonalInfo.css";
 import Button from "../UI/Button/Button";
 import Input from "../UI/Input/Input";
@@ -19,14 +19,30 @@ class PersonalInfo extends Component {
     clickHandler = () => {
         if (this.personalInfoData.fullName && this.personalInfoData.jobTitle) {
             this.props.match.params.personalInfo = this.personalInfoData;
-            this.props.history.push("/skills");
+
+            this.props.history.push({
+                pathname: '/skills',
+                state: {
+                    PersonalInfo: this.personalInfoData
+                }
+            });
+        } else {
+            const jobTitleInput = document.getElementById('jobTitle');
+            const fullNameInput = document.getElementById('fullName');
+            const borderStyle= "1px solid red";
+            if (jobTitleInput.value === '') {
+                jobTitleInput.style.border = borderStyle;
+            } 
+            if (fullNameInput.value === '') {
+                fullNameInput.style.border = borderStyle;
+            }
         }
     };
 
     handleInputChange = (event) => {
-        if (event.target.name === "fullName") {
+        if (event.target.id === "fullName") {
             this.personalInfoData.fullName = event.target.value;
-        } else if (event.target.name === "jobTitle") {
+        } else if (event.target.id === "jobTitle") {
             this.personalInfoData.jobTitle = event.target.value;
         } else if (event.target.id === "sex") {
             this.personalInfoData.sex = event.target.value;
@@ -40,15 +56,26 @@ class PersonalInfo extends Component {
         return (
             <div id="PersonalInfo">
                 <p>اطلاعات فردی خودتونو وارد کنید</p>
-                <form id="form-wrapper">
-                    <Input changed={this.handleInputChange} placeholder="نام و نام خانوادگی" autocomplete="off"
-                           type="text" name="fullName"/><br/>
-                    <Input changed={this.handleInputChange} autocomplete="off" placeholder="عنوان شغلی" type="text" name="jobTitle"/><br/>
+                <div id="form-wrapper">
+                    <Input
+                        id="fullName"
+                        changed={this.handleInputChange}
+                        placeholder="نام و نام خانوادگی"
+                        autocomplete="off"
+                        type="text"
+                        name="fullName" /><br />
+                    <Input
+                        id="jobTitle"
+                        changed={this.handleInputChange}
+                        autocomplete="off"
+                        placeholder="عنوان شغلی"
+                        type="text"
+                    /><br />
                     <label>جنسیت: </label>
-                    <Select id="sex" changed={this.handleInputChange} options={['مرد', 'زن']} /><br/>
+                    <Select id="sex" changed={this.handleInputChange} options={['مرد', 'زن']} /><br />
                     <label id="yearLabel">سال تولد: </label>
-                    <Select id="birthYear" changed={this.handleInputChange} options={this.createSelectItems()} /> <br/>
-                </form>
+                    <Select id="birthYear" changed={this.handleInputChange} options={this.createSelectItems()} /> <br />
+                </div>
                 <Button bgColor="#0099ff" color="white" clicked={this.clickHandler}>
                     مرحله بعد
                 </Button>

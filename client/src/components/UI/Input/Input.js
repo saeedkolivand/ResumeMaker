@@ -3,8 +3,13 @@ import './Input.css';
 
 const Input = props => {
     return (
-        <input onChange={props.changed} placeholder={props.placeholder} autoComplete={props.autocomplete}
-               type={props.type} name={props.name} />
+        <input 
+            id={props.id}
+            onChange={props.changed} 
+            placeholder={props.placeholder} 
+            autoComplete={props.autocomplete}
+            type={props.type} 
+            name={props.name} />
     );
 };
 

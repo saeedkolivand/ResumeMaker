@@ -6,6 +6,9 @@ const Button = props => {
         backgroundColor: props.bgColor,
         color: props.color
     };
+
+    
+
     return (
         <button id="button" style={styleBtn} onClick={props.clicked}>
             {props.children}
