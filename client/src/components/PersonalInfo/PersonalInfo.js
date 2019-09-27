@@ -6,6 +6,11 @@ import Select from "../UI/Select/Select";
 
 class PersonalInfo extends Component {
 
+    state = {
+        outAnim: false
+    }
+
+    personalInfoStyle = null;
     personalInfoData = {};
 
     createSelectItems = () => {
@@ -16,23 +21,36 @@ class PersonalInfo extends Component {
         return items;
     };
 
-    clickHandler = () => {
+    componentDidMount() {
+        console.log('PersonalInfo => componentDidMount');
+    }
+    componentDidUpdate(){
+        console.log('PersonalInfo => componentDidUpdate');        
+    }
+    clickHandler = async () => {
         if (this.personalInfoData.fullName && this.personalInfoData.jobTitle) {
-            this.props.match.params.personalInfo = this.personalInfoData;
 
-            this.props.history.push({
-                pathname: '/skills',
-                state: {
-                    PersonalInfo: this.personalInfoData
-                }
+            
+            await this.setState({
+                outAnim: true
             });
+
+            setTimeout(() => {
+                this.props.history.push({
+                    pathname: '/skills',
+                    state: {
+                        PersonalInfo: this.personalInfoData
+                    }
+                });
+            }, 200);
+
         } else {
             const jobTitleInput = document.getElementById('jobTitle');
             const fullNameInput = document.getElementById('fullName');
-            const borderStyle= "1px solid red";
+            const borderStyle = "1px solid red";
             if (jobTitleInput.value === '') {
                 jobTitleInput.style.border = borderStyle;
-            } 
+            }
             if (fullNameInput.value === '') {
                 fullNameInput.style.border = borderStyle;
             }
@@ -52,9 +70,19 @@ class PersonalInfo extends Component {
     };
 
     render() {
-
+        console.log('PersonalInfo', this.state);
+        if (this.state.outAnim) {
+            this.personalInfoStyle = {
+                transform: 'translateX(500px)',
+                opacity: 0
+            }
+        } 
+        
         return (
-            <div id="PersonalInfo">
+            <div
+                id="PersonalInfo"
+                style={this.personalInfoStyle}
+                >
                 <p>اطلاعات فردی خودتونو وارد کنید</p>
                 <div id="form-wrapper">
                     <Input
