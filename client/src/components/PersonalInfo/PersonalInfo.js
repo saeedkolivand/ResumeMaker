@@ -19,18 +19,11 @@ class PersonalInfo extends Component {
     createSelectItems = () => {
         let items = [];
         for (let i = 1350; i <= 1398; i++) {
-            items.push({id: i, text: i});
+            items.push(i);
         }
         return items;
     };
 
-    componentDidMount() {
-        console.log('PersonalInfo => componentDidMount');
-    }
-
-    componentDidUpdate() {
-        console.log('PersonalInfo => componentDidUpdate');
-    }
 
     clickHandler = async () => {
         if (this.personalInfoData.fullName && this.personalInfoData.jobTitle) {
@@ -74,7 +67,7 @@ class PersonalInfo extends Component {
         if (this.state.outAnim) {
             this.personalInfoStyle = {
                 transform: 'translateX(500px)',
-                opacity: 0
+                opacity: 1
             }
         }
 
@@ -88,9 +81,9 @@ class PersonalInfo extends Component {
                            type="text"/><br/>
                     <label>جنسیت: </label>
                     <Select id="sex" changed={this.handleInputChange}
-                            options={[{id: 1, text: 'مرد'}, {id: 2, text: 'زن'}]}/><br/>
+                            options={['مرد' , 'زن']}/><br/>
                     <label id="yearLabel">سال تولد: </label>
-                    <Select id="birthYear" changed={this.handleInputChange} options={this.createSelectItems()}/> <br/>
+                    <Select id="birthYear" changed={this.handleInputChange} options={this.createSelectItems()}/><br/>
                 </div>
                 <Button bgColor="#0099ff" color="white" clicked={this.clickHandler}>
                     مرحله بعد

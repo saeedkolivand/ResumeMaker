@@ -3,7 +3,7 @@ import './Select.css';
 
 const Select = props => {
     const optionsJSX = props.options.map(((value, index, array) => {
-        return <option key={index} value={value.id}>{value.text}</option>
+        return <option key={index} value={value}>{value}</option>
     } ));
     return (
         <select className="optionClass" id={props.id} onChange={props.changed}>

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './Skills.css';
 import Input from "../UI/Input/Input";
 import Button from "../UI/Button/Button";
@@ -11,38 +11,31 @@ class Skills extends Component {
     };
 
     levels = [
-        {id: 1, value: 25, text: 'تازه کار'},
-        {id: 2, value: 50, text: 'نیمه ماهر'},
-        {id: 3, value: 75, text: 'ماهر'},
-        {id: 4, value: 100, text: 'متخصص'}
+        'تازه کار',
+        'نیمه ماهر',
+        'ماهر',
+        'متخصص'
     ];
 
-    componentDidMount() {
-        console.log(this.props);
-
-    }
-
-    currentSkill = {skill: '', level: ''};
+    currentSkill = { skillText: '', level: '' };
     handleAddNewSkillText = (event) => {
-        this.currentSkill.skill = event.target.value;
-        console.log(this.currentSkill);
+        this.currentSkill.skillText = event.target.value;
+        //console.log(this.currentSkill);
     };
 
-    findLevel = id => this.levels.filter(e => e.id === parseInt(id))[0];
 
     handleLevelSelector = (e) => {
         this.currentSkill.level = e.target.value;
-        console.log(this.currentSkill);
+        //console.log(this.currentSkill);
 
     };
 
     handleAddSkill = (event) => {
         let oldSkills = [...this.state.skills];
-        console.log(oldSkills === this.state.skills);
-        if (this.currentSkill.level.length && this.currentSkill.skill.length) {
-            oldSkills.push({skill: this.currentSkill.skill, level: this.currentSkill.level});
-            this.setState({skills: oldSkills});
-            this.currentSkill = {level: [], skill: []};
+        if (this.currentSkill.level.length && this.currentSkill.skillText.length) {
+            oldSkills.push({ skillText: this.currentSkill.skillText, level: this.currentSkill.level });
+            this.setState({ skills: oldSkills });
+            this.currentSkill = { level: '', skillText: '' };
             document.getElementById('skillInput').value = '';
             document.getElementById('skillInput').focus();
             document.getElementById('levelSelector').value = '-';
@@ -50,37 +43,68 @@ class Skills extends Component {
     };
 
     handleDeleteSkill = (index) => {
-        let deleteSkill = [...this.state.skills];
 
+        let oldSkills = [...this.state.skills];
+
+        oldSkills.splice(index, 1);
         this.setState({
-            skills: deleteSkill.splice(index,1)
+            skills: [...oldSkills]
         })
     };
 
     handleSubmit = () => {
+        this.props.history.push({
+            pathname: '/workexperience',
+            state: {
+                ...this.props.location.state,
+                Skills : this.state.skills
+            }
+        });
+    }
 
-    };
 
+    setLevelValue = (levelText) => {
+        switch (levelText) {
+            case this.levels[0]:
+                return 25;
+            case this.levels[1]:
+                return 50;
+            case this.levels[2]:
+                return 75;
+            case this.levels[3]:
+                return 100;
+            default:
+                return undefined;
+        }
+    }
+
+    skillContainerRenderer = () => {
+        let element = null;
+        if (this.state.skills.length) {
+            element = this.state.skills.map((skill, i) => {
+                return (<div className="addedSkillBox" key={i}>
+                    <span>{skill.skillText}</span><br />
+                    <progress max="100" value={this.setLevelValue(skill.level)}>
+                        {this.setLevelValue(skill.level)}
+                    </progress>
+                    <span onClick={() => this.handleDeleteSkill(i)}>*</span>
+                </div>);
+            })
+
+        }
+        return element;
+    }
 
     render() {
-        const {skills} = this.state;
         return (
             <div id="skills">
                 <p>مهارت ها</p>
                 <div id="formWrapper">
                     <Input id="skillInput" changed={this.handleAddNewSkillText} value={this.state.skill}
-                           placeholder="مهارت خود را وارد کنید" autocomplete="off" type="text" name="skills"/>
-                    <Select id="levelSelector" changed={this.handleLevelSelector} options={this.levels}/>
+                        placeholder="مهارت خود را وارد کنید" autocomplete="off" type="text" name="skills" />
+                    <Select id="levelSelector" changed={this.handleLevelSelector} options={this.levels} />
                     <Button clicked={this.handleAddSkill} bgColor="#ff6666" color="white">+</Button>
-                    {skills.length && this.state.skills.map((skill, i) =>
-                        <div key={i} className="addedSkillBox">
-                            <span>{skill.skill}</span><br/>
-                            <progress max="100" value={this.findLevel(skill.level).value}>
-                                {this.findLevel(skill.level).value}
-                            </progress>
-                            <span onClick={() => this.handleDeleteSkill(i)}>*</span>
-                        </div>
-                    )}
+                    {this.skillContainerRenderer()}
                 </div>
                 <Button bgColor="#0099ff" color="white" clicked={this.handleSubmit}>
                     مرحله بعد
