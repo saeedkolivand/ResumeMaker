@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import "./PersonalInfo.css";
 import Button from "../UI/Button/Button";
 import Input from "../UI/Input/Input";
@@ -8,15 +8,18 @@ class PersonalInfo extends Component {
 
     state = {
         outAnim: false
-    }
+    };
 
-    personalInfoStyle = null;
+    personalInfoStyle = {
+        transform: 'translateX(500px)',
+        opacity: 1
+    };
     personalInfoData = {};
 
     createSelectItems = () => {
         let items = [];
         for (let i = 1350; i <= 1398; i++) {
-            items.push(i);
+            items.push({id: i, text: i});
         }
         return items;
     };
@@ -24,26 +27,23 @@ class PersonalInfo extends Component {
     componentDidMount() {
         console.log('PersonalInfo => componentDidMount');
     }
-    componentDidUpdate(){
-        console.log('PersonalInfo => componentDidUpdate');        
+
+    componentDidUpdate() {
+        console.log('PersonalInfo => componentDidUpdate');
     }
+
     clickHandler = async () => {
         if (this.personalInfoData.fullName && this.personalInfoData.jobTitle) {
-
-            
-            await this.setState({
+            this.setState({
                 outAnim: true
-            });
-
-            setTimeout(() => {
+            }, () => setTimeout(() => {
                 this.props.history.push({
                     pathname: '/skills',
                     state: {
                         PersonalInfo: this.personalInfoData
                     }
                 });
-            }, 200);
-
+            }, 200));
         } else {
             const jobTitleInput = document.getElementById('jobTitle');
             const fullNameInput = document.getElementById('fullName');
@@ -76,33 +76,21 @@ class PersonalInfo extends Component {
                 transform: 'translateX(500px)',
                 opacity: 0
             }
-        } 
-        
+        }
+
         return (
-            <div
-                id="PersonalInfo"
-                style={this.personalInfoStyle}
-                >
+            <div id="PersonalInfo" style={this.personalInfoStyle}>
                 <p>اطلاعات فردی خودتونو وارد کنید</p>
                 <div id="form-wrapper">
-                    <Input
-                        id="fullName"
-                        changed={this.handleInputChange}
-                        placeholder="نام و نام خانوادگی"
-                        autocomplete="off"
-                        type="text"
-                        name="fullName" /><br />
-                    <Input
-                        id="jobTitle"
-                        changed={this.handleInputChange}
-                        autocomplete="off"
-                        placeholder="عنوان شغلی"
-                        type="text"
-                    /><br />
+                    <Input id="fullName" changed={this.handleInputChange} placeholder="نام و نام خانوادگی"
+                           autocomplete="off" type="text" name="fullName"/><br/>
+                    <Input id="jobTitle" changed={this.handleInputChange} autocomplete="off" placeholder="عنوان شغلی"
+                           type="text"/><br/>
                     <label>جنسیت: </label>
-                    <Select id="sex" changed={this.handleInputChange} options={['مرد', 'زن']} /><br />
+                    <Select id="sex" changed={this.handleInputChange}
+                            options={[{id: 1, text: 'مرد'}, {id: 2, text: 'زن'}]}/><br/>
                     <label id="yearLabel">سال تولد: </label>
-                    <Select id="birthYear" changed={this.handleInputChange} options={this.createSelectItems()} /> <br />
+                    <Select id="birthYear" changed={this.handleInputChange} options={this.createSelectItems()}/> <br/>
                 </div>
                 <Button bgColor="#0099ff" color="white" clicked={this.clickHandler}>
                     مرحله بعد

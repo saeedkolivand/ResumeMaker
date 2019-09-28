@@ -22,7 +22,6 @@
 }
 
 
-
 #skills #formWrapper input {
     width: 50%;
     height: 55px;
@@ -33,11 +32,21 @@
     width: 20%;
     height: 50px;
     margin-right: 30px;
+    display: inline-block;
 }
 
 #skills #formWrapper button {
     width: 10%;
     height: 50px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-right: 15px;
+    display: inline-block;
+}
+
+#skills #formWrapper .addedSkillBox {
+    display: inline-block;
+    padding: 20px 30px;
+    margin: 25px 10px 0px 10px;
+    border: 1px solid rgb(255, 102, 102);
+    box-shadow: 0px 0px 50px #e6e6e6;
 }
