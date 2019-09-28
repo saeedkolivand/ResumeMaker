@@ -6,8 +6,11 @@ import Select from '../UI/Select/Select';
 
 class Skills extends Component {
 
+
+
     state = {
-        skills: []
+        skills: [],
+        outAnim: false
     };
 
     levels = [
@@ -39,6 +42,12 @@ class Skills extends Component {
             document.getElementById('skillInput').value = '';
             document.getElementById('skillInput').focus();
             document.getElementById('levelSelector').value = '-';
+        } else {
+            const skillInput = document.getElementById('skillInput');
+            const borderStyle = "1px solid red";
+            if (!skillInput.value.length) {
+                skillInput.style.border = borderStyle;
+            }
         }
     };
 
@@ -53,13 +62,19 @@ class Skills extends Component {
     };
 
     handleSubmit = () => {
-        this.props.history.push({
-            pathname: '/workexperience',
-            state: {
-                ...this.props.location.state,
-                Skills : this.state.skills
-            }
-        });
+
+        this.setState({
+            outAnim: true
+        }, () => setTimeout(() => {
+            this.props.history.push({
+                pathname: '/workexperience',
+                state: {
+                    ...this.props.location.state,
+                    Skills: this.state.skills
+                }
+            });
+        }, 300));
+
     }
 
 
@@ -96,8 +111,15 @@ class Skills extends Component {
     }
 
     render() {
+        let skillStyle= {};
+        if (this.state.outAnim) {
+            skillStyle = {
+                transform: 'translateX(500px)',
+                opacity: 0
+            }
+        }
         return (
-            <div id="skills">
+            <div id="skills" style={skillStyle}>
                 <p>مهارت ها</p>
                 <div id="formWrapper">
                     <Input id="skillInput" changed={this.handleAddNewSkillText} value={this.state.skill}

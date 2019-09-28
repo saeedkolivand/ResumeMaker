@@ -7,7 +7,6 @@
     transition: all 0.3s linear;
     background-color: white;
     direction: rtl;
-    opacity: 0;
 }
 
 #PersonalInfo p {
@@ -34,6 +33,11 @@
 
 #PersonalInfo #form-wrapper select {
     margin-bottom: 32px;
+}
+
+#PersonalInfo #form-wrapper #sex,
+#PersonalInfo #form-wrapper #birthYear {
+    margin-right: 30px;
 }
 
 #PersonalInfo button {
