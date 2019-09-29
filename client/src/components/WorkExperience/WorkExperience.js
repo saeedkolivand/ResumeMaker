@@ -34,17 +34,27 @@ class WorkExperience extends Component {
     currentExperience = { experienceText: '', fromYear: '', fromMonth:'', toYear: '', toMonth: '' };
     handleAddNewExperienceText = (event) => {
         this.currentExperience.experienceText = event.target.value;
-        this.currentExperience.fromYear = event.target.value;
-        this.currentExperience.fromMonth = event.target.value;
-        this.currentExperience.toYear = event.target.value;
-        this.currentExperience.toMonth = event.target.value;
+    };
 
+    handleFromYear = (event) => {
+        this.currentExperience.fromYear = event.target.value;
+    };
+
+    handleFromMonth = (event) => {
+        this.currentExperience.fromMonth = event.target.value;
+    };
+
+    handleToYear = (event) => {
+        this.currentExperience.toYear = event.target.value;
+    };
+
+    handleToMonth = (event) => {
+        this.currentExperience.toMonth = event.target.value;
     };
 
     handleAddExperience = () => {
         let oldExperiences = [...this.state.experiences];
-        if (this.currentExperience.fromYear.length && this.currentExperience.fromMonth.length &&
-            this.currentExperience.toYear.length &&  this.currentExperience.toMonth.length && this.currentExperience.experienceText.length) {
+        if (this.currentExperience.fromYear.length) {
                 oldExperiences.push({ experienceText: this.currentExperience.experienceText,
                     fromYear: this.currentExperience.fromYear, fromMonth: this.currentExperience.fromMonth,
                     toYear: this.currentExperience.toYear, toMonth: this.currentExperience.toMonth });
@@ -105,23 +115,23 @@ class WorkExperience extends Component {
     };
 
     render() {
-        let ExperienceStyle = {};
+        let experienceStyle = {};
         if (this.state.outAnim) {
-            ExperienceStyle = {
+            experienceStyle = {
                 transform: 'translateX(500px)',
                 opacity: 0
             }
         }
         return (
-            <div id="workExperience">
+            <div id="workExperience" style={experienceStyle}>
                 <p>سوابق شغلی</p>
                 <div id="formWrapper">
-                    <Input id="ExperienceInput" changed={this.handleAddNewExperienceText} value={this.state.experience}
+                    <Input id="experienceInput" changed={this.handleAddNewExperienceText} value={this.state.experiences}
                            placeholder="سوابق  خود را وارد کنید" autocomplete="off" type="text" name="experienceText" /> <br />
-                    <label>سال شروع</label><Select id="fromYearSelector" changed={this.handleAddNewExperienceText} options={this.yearList()} />
-                    <label>ماه شروع</label><Select id="fromMonthSelector" changed={this.handleAddNewExperienceText} options={this.monthList()} />
-                    <label>سال پایان</label><Select id="toYearSelector" changed={this.handleAddNewExperienceText} options={this.monthList()} />
-                    <label>ماه پایان</label><Select id="toMonthSelector" changed={this.handleAddNewExperienceText} options={this.yearList()} />
+                    <label>سال شروع</label><Select id="fromYearSelector" changed={this.handleFromYear} options={this.yearList()} />
+                    <label>ماه شروع</label><Select id="fromMonthSelector" changed={this.handleFromMonth} options={this.monthList()} />
+                    <label>سال پایان</label><Select id="toYearSelector" changed={this.handleToYear} options={this.monthList()} />
+                    <label>ماه پایان</label><Select id="toMonthSelector" changed={this.handleToMonth} options={this.yearList()} />
                     <Button clicked={this.handleAddExperience} bgColor="#ff6666" color="white">+</Button>
                     {this.experienceContainerRenderer()}
                 </div>
