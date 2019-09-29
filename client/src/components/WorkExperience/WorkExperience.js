@@ -62,10 +62,10 @@ class WorkExperience extends Component {
                     this.currentExperience = { experienceText: '', fromYear: '', fromMonth:'', toYear: '', toMonth: '' };
                     document.getElementById('experienceInput').value = '';
                     document.getElementById('experienceInput').focus();
-                    document.getElementById('fromYear').value = '-';
-                    document.getElementById('toMonth').value = '-';
-                    document.getElementById('toYear').value = '-';
-                    document.getElementById('fromMonth').value = '-';
+                    document.getElementById('fromYearSelector').value = '-';
+                    document.getElementById('toMonthSelector').value = '-';
+                    document.getElementById('toYearSelector').value = '-';
+                    document.getElementById('fromMonthSelector').value = '-';
         } else {
             const experienceInput = document.getElementById('experienceInput');
             const borderStyle = "1px solid red";
@@ -105,9 +105,12 @@ class WorkExperience extends Component {
             element = this.state.experiences.map((experience, i) => {
                 return (
                     <div className="addedExperienceBox" key={i}>
-                    <span>{experience.experienceText}</span><br />
-                    <span onClick={() => this.handleDeleteExperience(i)}>*</span>
-                </div>);
+                        <div className="addedExperienceText">
+                            {`اسم شرکت: ${experience.experienceText} از ${experience.fromMonth} - ${experience.fromYear} تا ${experience.toMonth} - ${experience.toYear} `}
+                        </div><br />
+                        <div className="deleteIcon" onClick={() => this.handleDeleteExperience(i)} />
+                    </div>
+                );
             })
 
         }
@@ -130,9 +133,9 @@ class WorkExperience extends Component {
                            placeholder="سوابق  خود را وارد کنید" autocomplete="off" type="text" name="experienceText" /> <br />
                     <label>سال شروع</label><Select id="fromYearSelector" changed={this.handleFromYear} options={this.yearList()} />
                     <label>ماه شروع</label><Select id="fromMonthSelector" changed={this.handleFromMonth} options={this.monthList()} />
-                    <label>سال پایان</label><Select id="toYearSelector" changed={this.handleToYear} options={this.monthList()} />
-                    <label>ماه پایان</label><Select id="toMonthSelector" changed={this.handleToMonth} options={this.yearList()} />
-                    <Button clicked={this.handleAddExperience} bgColor="#ff6666" color="white">+</Button>
+                    <label>سال پایان</label><Select id="toYearSelector" changed={this.handleToYear} options={this.yearList()} />
+                    <label>ماه پایان</label><Select id="toMonthSelector" changed={this.handleToMonth} options={this.monthList()} />
+                    <Button clicked={this.handleAddExperience} bgColor="#ff6666" color="white">+</Button><br/>
                     {this.experienceContainerRenderer()}
                 </div>
                 <Button bgColor="#0099ff" color="white" clicked={this.handleSubmit}>

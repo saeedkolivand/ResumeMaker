@@ -33,11 +33,22 @@
     display: inline-block;
 }
 
+#workExperience #formWrapper input:hover {
+    border-color: cornflowerblue;
+}
+
 #workExperience #formWrapper select {
     width: 9%;
     height: 40px;
-
     margin-top: 30px;
+}
+
+#workExperience #formWrapper select:hover {
+    border-color: cornflowerblue;
+}
+
+#workExperience #formWrapper select:focus {
+    border-color: cornflowerblue;
 }
 
 #workExperience #formWrapper button {
@@ -56,10 +67,50 @@
 }
 
 #workExperience #formWrapper .addedExperienceBox {
-    width: 90%;
-    /*display: inline-block;*/
+    width: 80%;
+    height: 40px;
+    display: inline-block;
     padding: 20px 30px;
     margin: 25px 10px 0px 10px;
     border: 1px solid rgb(255, 102, 102);
+    border-radius: 10px;
     box-shadow: 0px 0px 50px #e6e6e6;
 }
+
+#workExperience #formWrapper .addedExperienceBox .addedExperienceText {
+    direction: rtl;
+    margin: -8px auto 0;
+    font-size: 1.3rem;
+}
+
+#workExperience #formWrapper .addedExperienceBox .deleteIcon {
+    color: #000;
+    position: absolute;
+    margin-top: -38px;
+    margin-right: -15px;
+    width: 21px;
+    height: 21px;
+}
+
+#workExperience #formWrapper .addedExperienceBox .deleteIcon:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 21px;
+    height: 1px;
+    background-color: currentColor;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+#workExperience #formWrapper .addedExperienceBox .deleteIcon:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 21px;
+    height: 1px;
+    background-color: currentColor;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
