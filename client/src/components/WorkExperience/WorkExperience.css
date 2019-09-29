@@ -1,0 +1,64 @@
+#workExperience {
+    width: 60%;
+    box-sizing: border-box;
+    padding: 1px;
+    box-shadow: 0px 0px 50px #e6e6e6;
+    margin: 5% auto;
+    text-align: center;
+    border-radius: 20px;
+    transition: all 0.3s linear;
+    direction: rtl;
+}
+
+#workExperience p {
+    font-size: 2rem;
+    margin: 50px 30%;
+    text-align: center;
+}
+
+#workExperience button {
+    margin-bottom: 30px;
+}
+
+#workExperience #formWrapper {
+    width: 100%;
+    padding: 0 100px 32px 100px;
+}
+
+
+#workExperience #formWrapper input {
+    margin: 0 auto;
+    width: 40%;
+    height: 55px;
+    display: inline-block;
+}
+
+#workExperience #formWrapper select {
+    width: 9%;
+    height: 40px;
+
+    margin-top: 30px;
+}
+
+#workExperience #formWrapper button {
+    position: absolute;
+    display: inline-block;
+    width: 2%;
+    height: 40px;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    margin-top: 30px;
+}
+
+#workExperience #formWrapper label {
+    margin: 0 10px auto;
+    font-size: 1.2rem;
+}
+
+#workExperience #formWrapper .addedExperienceBox {
+    display: inline-block;
+    padding: 20px 30px;
+    margin: 25px 10px 0px 10px;
+    border: 1px solid rgb(255, 102, 102);
+    box-shadow: 0px 0px 50px #e6e6e6;
+}

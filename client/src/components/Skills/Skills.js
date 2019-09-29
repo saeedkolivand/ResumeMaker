@@ -75,7 +75,7 @@ class Skills extends Component {
             });
         }, 300));
 
-    }
+    };
 
 
     setLevelValue = (levelText) => {
@@ -91,7 +91,7 @@ class Skills extends Component {
             default:
                 return undefined;
         }
-    }
+    };
 
     skillContainerRenderer = () => {
         let element = null;
@@ -108,7 +108,7 @@ class Skills extends Component {
 
         }
         return element;
-    }
+    };
 
     render() {
         let skillStyle= {};
@@ -122,7 +122,7 @@ class Skills extends Component {
             <div id="skills" style={skillStyle}>
                 <p>مهارت ها</p>
                 <div id="formWrapper">
-                    <Input id="skillInput" changed={this.handleAddNewSkillText} value={this.state.skill}
+                    <Input id="skillInput" changed={this.handleAddNewSkillText} value={this.state.skills}
                         placeholder="مهارت خود را وارد کنید" autocomplete="off" type="text" name="skills" />
                     <Select id="levelSelector" changed={this.handleLevelSelector} options={this.levels} />
                     <Button clicked={this.handleAddSkill} bgColor="#ff6666" color="white">+</Button>
