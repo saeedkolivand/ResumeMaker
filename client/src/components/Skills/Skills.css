@@ -2,7 +2,7 @@
     width: 60%;
     box-sizing: border-box;
     padding: 1px;
-    box-shadow: 0px 0px 50px #e6e6e6;
+    box-shadow: 0 0 50px #e6e6e6;
     margin: 5% auto;
     text-align: center;
     border-radius: 20px;
@@ -50,8 +50,48 @@
 
 #skills #formWrapper .addedSkillBox {
     display: inline-block;
+    width: 20%;
+    height: 50px;
     padding: 20px 30px;
-    margin: 25px 10px 0px 10px;
-    border: 1px solid rgb(255, 102, 102);
-    box-shadow: 0px 0px 50px #e6e6e6;
+    margin: 25px 10px 0 10px;
+    background-color: #f1f1f1;
+    border: 1px solid cornflowerblue;
+    box-shadow: 0 0 50px #eeeeee;
+}
+
+#skills #formWrapper .addedSkillBox .addedSkillText {
+    direction: rtl;
+    margin: -29px 0 auto;
+    font-size: 1rem;
+}
+
+#skills #formWrapper .addedSkillBox .deleteIcon {
+    color: #000;
+    position: absolute;
+    margin-top: -30px;
+    margin-right: -33px;
+    width: 21px;
+    height: 21px;
+}
+
+#skills #formWrapper .addedSkillBox .deleteIcon:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 21px;
+    height: 1px;
+    background-color: currentColor;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+#skills #formWrapper .addedSkillBox .deleteIcon:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 21px;
+    height: 1px;
+    background-color: currentColor;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
 }

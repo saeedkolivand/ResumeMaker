@@ -16,32 +16,36 @@
 }
 
 #PersonalInfo #form-wrapper {
+    display: inline-block;
     text-align: center;
     width: 35%;
-    margin: 0 auto;
+    margin: 0 32.5%;
 }
 
 #PersonalInfo #form-wrapper input {
+    display: inline-block;
     margin-bottom: 32px;
 }
 
 #PersonalInfo #form-wrapper label {
+    display: inline-block;
     float: right;
     font-size: 1.3rem;
     /*margin-right: 100px;*/
 }
 
 #PersonalInfo #form-wrapper select {
+    display: inline-block;
     margin-bottom: 32px;
 }
 
 #PersonalInfo #form-wrapper #sex,
 #PersonalInfo #form-wrapper #birthYear {
+    display: inline-block;
     margin-right: 30px;
 }
 
 #PersonalInfo button {
-    margin-right: 39%;
-    margin-top: 32px;
-    margin-bottom: 32px;
+    display: inline-block;
+    margin: 32px 34.5%;
 }
