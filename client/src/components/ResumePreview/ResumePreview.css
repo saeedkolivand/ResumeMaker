@@ -1,0 +1,72 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    direction: rtl;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: "B nazanin";
+} */
+#resumePreview {
+    width: 100%;
+    height: 100%;
+    direction: rtl;
+}
+
+
+#resumePreview #header {
+    width: 100%;
+    padding: 50px 100px 30px 80px;
+}
+
+#resumePreview #header h1{
+    margin-bottom: 32px;
+}
+
+#resumePreview #header h2 {
+    margin-right: 32px;
+}
+
+#resumePreview #headerDivider {
+    width: 100%;
+    height: 8px;
+    background-color: rgb(160, 160, 160);
+    /* margin: 0 auto; */
+}
+
+#resumePreview #rightPanel {
+    width: 20%;
+    float: right;
+}
+
+#resumePreview #leftPanel {
+    width: 65%;
+    float: right;
+    margin-right: 150px;
+}
+
+#resumePreview #educationPanel,
+#resumePreview #skillsPanel,
+#resumePreview #contactPanel,
+#resumePreview #abouteMe , 
+#resumePreview #workExperienceContainer {
+    padding: 32px 50px 50px 0;
+}
+
+#resumePreview #panelsDivider {
+    height: 80%;
+    width: 2px;
+    background-color: rgb(160, 160, 160);
+    position: absolute;
+    right: 26%;
+}
+
+#resumePreview .headerDivider {
+    width: 100%;
+    height: 2px;
+    margin-top: 8px;
+    background-color: rgb(160, 160, 160);
+}

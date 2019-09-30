@@ -1,9 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const htmlPdf = require('html-pdf');
-
-
-const pdfTemplateOne = require('./pdfTemplate/templateOne.js');
+const puppeteer = require('puppeteer');
+const path = require('path');
+const fs = require('fs');
+const hbs = require('handlebars');
 
 const port = process.env.PORT || 5000;
 
@@ -12,15 +12,38 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-app.post('/create-pdf' , (req , res) =>{
-    htmlPdf.create(pdfTemplateOne() , {}).toFile('resume.pdf' , (err)=>{
-        if (err) {
-            res.send(Promise.reject());
-        }
+//app.post('/create-pdf', async (req, res) => {
 
-        res.send(Promise.resolve());
-    });
-});
+(async () => {
+    try {
+
+        const htmlTemplatePath = path.join(__dirname, 'pdfTemplate', 'index.hbs');
+        const html = fs.readFileSync(htmlTemplatePath, 'utf-8');
+        const htmlTemplate = await hbs.compile(html)();
+        console.log(htmlTemplate);
+
+        const browser = await puppeteer.launch();
+        const page = await browser.newPage();
+
+        await page.setContent(htmlTemplate);
+
+        await page.emulateMedia('screen');
+
+        await page.pdf({
+            path: 'testRsume.pdf',
+            format: 'A4',
+            printBackground: true
+        });
+        console.log('pdf created succfully!');
+        await browser.close();
+    } catch (e) {
+        console.log('error occured in /create-pdf : ' + e);
+
+    }
+})();
 
 
-app.listen(port , ()=> console.log(`server is up and running on port ${port}`));
+//});
+
+
+app.listen(port, () => console.log(`server is up and running on port ${port}`));

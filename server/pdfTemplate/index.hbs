@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PdfTemplat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            direction: rtl;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: "B nazanin";
+        }
+
+        #header {
+            width: 100%;
+            padding: 50px 100px 30px 80px;
+        }
+
+        #header h1 {
+            margin-bottom: 32px;
+        }
+
+        #header h2 {
+            margin-right: 32px;
+        }
+
+        #headerDivider {
+            width: 100%;
+            height: 8px;
+            background-color: rgb(160, 160, 160);
+            {{!-- margin: 0 auto; --}}
+        }
+
+        #rightPanel {
+            width: 20%;
+            height: 300px;
+            float: right;
+        }
+
+        #leftPanel {
+            width: 65%;
+            height: 300px;
+            float: right;
+            margin-right: 50px;
+        }
+
+        #education,
+        #skills,
+        #contact,
+        #abouteMe , 
+        #workExperience {
+            padding: 8px;
+        }
+
+        #panelsDivider {
+            height: 300px;
+            width: 2px;
+            background-color: rgb(160, 160, 160);
+            position: absolute;
+            right: 26%;
+        }
+
+        .headerDivider {
+            width: 100%;
+            height: 2px;
+            margin-top: 8px;
+            background-color: rgb(160, 160, 160);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1>اسم شخص</h1>
+        <h2>موقعیت شغلی</h2>
+    </div>
+    <div id="headerDivider"></div>
+    <div id="rightPanel">
+        <div id="education">
+            <h3>تحصیلات</h3>
+                <div class="headerDivider"></div>
+        </div>
+        <div id="skills">
+            <h3>مهارت ها</h3>
+            <div class="headerDivider"></div>
+        </div>
+
+
+        <div id="contact">
+            <h3>تماس با ما</h3>
+            <div class="headerDivider"></div>
+        </div>
+    </div>
+    <div id="panelsDivider"></div>
+    <div id="leftPanel">
+        <div id="abouteMe">
+            <h3>درباره من</h3>
+            <div class="headerDivider"></div>
+        </div>
+        <div id="workExperience">
+            <h3>سابقه کاری</h3>
+            <div class="headerDivider"></div>
+        </div>
+    </div>
+</body>
+
+</html>

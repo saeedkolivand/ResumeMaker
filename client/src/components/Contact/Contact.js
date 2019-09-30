@@ -44,7 +44,7 @@ class Contact extends Component {
                 outAnim: true
             }, () => setTimeout(() => {
                 this.props.history.push({
-                    pathname: '/preview',
+                    pathname: '/resumePreview',
                     state: {
                         ...this.props.location.state,
                         contactInfo: this.state.contactInfo
