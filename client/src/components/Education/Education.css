@@ -1,8 +1,8 @@
-#workExperience {
+#education {
     width: 60%;
     box-sizing: border-box;
     padding: 1px;
-    box-shadow: 0px 0px 50px #e6e6e6;
+    box-shadow: 0 0 50px #e6e6e6;
     margin: 5% auto;
     text-align: center;
     border-radius: 20px;
@@ -10,48 +10,48 @@
     direction: rtl;
 }
 
-#workExperience p {
+#education p {
     font-size: 2rem;
     margin: 50px 30%;
     text-align: center;
 }
 
-#workExperience button {
+#education button {
     margin-bottom: 30px;
 }
 
-#workExperience #formWrapper {
+#education #formWrapper {
     width: 100%;
     padding: 0 100px 32px 100px;
 }
 
 
-#workExperience #formWrapper input {
+#education #formWrapper input {
     margin: 0 auto;
     width: 40%;
     height: 55px;
     display: inline-block;
 }
 
-#workExperience #formWrapper input:hover {
+#education #formWrapper input:hover {
     border-color: cornflowerblue;
 }
 
-#workExperience #formWrapper select {
+#education #formWrapper select {
     width: 9%;
     height: 40px;
     margin-top: 30px;
 }
 
-#workExperience #formWrapper select:hover {
+#education #formWrapper select:hover {
     border-color: cornflowerblue;
 }
 
-#workExperience #formWrapper select:focus {
+#education #formWrapper select:focus {
     border-color: cornflowerblue;
 }
 
-#workExperience #formWrapper button {
+#education #formWrapper button {
     position: absolute;
     display: inline-block;
     width: 2%;
@@ -61,12 +61,12 @@
     margin-top: 30px;
 }
 
-#workExperience #formWrapper label {
+#education #formWrapper label {
     margin: 0 10px auto;
     font-size: 1.2rem;
 }
 
-#workExperience #formWrapper .addedExperienceBox {
+#education #formWrapper .addedEducationBox {
     width: 80%;
     height: 40px;
     display: inline-block;
@@ -77,13 +77,13 @@
     box-shadow: 0px 0px 50px #e6e6e6;
 }
 
-#workExperience #formWrapper .addedExperienceBox .addedExperienceText {
+#education #formWrapper .addedEducationBox .addedEducationText {
     direction: rtl;
     margin: -14px auto 0;
     font-size: 1.3rem;
 }
 
-#workExperience #formWrapper .addedExperienceBox .deleteIcon {
+#education #formWrapper .addedEducationBox .deleteIcon {
     color: #000;
     position: absolute;
     margin-top: -38px;
@@ -92,7 +92,7 @@
     height: 21px;
 }
 
-#workExperience #formWrapper .addedExperienceBox .deleteIcon:before {
+#education #formWrapper .addedEducationBox .deleteIcon:before {
     content: '';
     position: absolute;
     top: 10px;
@@ -103,7 +103,7 @@
     transform: rotate(-45deg);
 }
 
-#workExperience #formWrapper .addedExperienceBox .deleteIcon:after {
+#education #formWrapper .addedEducationBox .deleteIcon:after {
     content: '';
     position: absolute;
     top: 10px;
