@@ -1,0 +1,41 @@
+#contact {
+    width: 60%;
+    padding: 1px;
+    margin: 5% auto;
+    border-radius: 20px;
+    box-shadow: 0px 0px 50px #e6e6e6;
+    transition: all 0.3s linear;
+    background-color: white;
+    direction: rtl;
+}
+
+#contact p {
+    font-size: 2rem;
+    margin: 50px 30%;
+    text-align: center;
+}
+
+#contact #formWrapper {
+    text-align: center;
+    width: 35%;
+    margin: 0 auto;
+}
+
+#contact #formWrapper input {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+#contact #formWrapper input:hover {
+    border-color: cornflowerblue;
+}
+
+#contact #formWrapper input:focus {
+    border-color: cornflowerblue;
+}
+
+#contact button {
+    margin-right: 36%;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
