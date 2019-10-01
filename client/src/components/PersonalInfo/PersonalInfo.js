@@ -28,7 +28,7 @@ class PersonalInfo extends Component {
                 this.props.history.push({
                     pathname: '/skills',
                     state: {
-                        PersonalInfo: this.personalInfoData
+                        personalInfo: this.personalInfoData
                     }
                 });
             }, 200));

@@ -70,7 +70,7 @@ class Skills extends Component {
                 pathname: '/workexperience',
                 state: {
                     ...this.props.location.state,
-                    Skills: this.state.skills
+                    سkills: this.state.skills
                 }
             });
         }, 300));
