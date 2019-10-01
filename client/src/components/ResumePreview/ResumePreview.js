@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { saveAs } from "file-saver";
+//import { saveAs } from "file-saver";
 
 import Button from '../UI/Button/Button';
 
 import './ResumePreview.css';
 
 class ResumePreview extends Component {
-    state = {}
+    state = {};
 
     handledownloadButton = (e) => {
         axios(`/getPdf`, {
@@ -24,7 +24,7 @@ class ResumePreview extends Component {
       .catch(error => {
         console.log(error);
       });
-    }
+    };
 
     componentDidMount() {
         console.log(this.props.location.state);

@@ -6,8 +6,6 @@ import Select from '../UI/Select/Select';
 
 class Skills extends Component {
 
-
-
     state = {
         skills: [],
         outAnim: false
@@ -70,7 +68,7 @@ class Skills extends Component {
                 pathname: '/workexperience',
                 state: {
                     ...this.props.location.state,
-                    سkills: this.state.skills
+                    skills: this.state.skills
                 }
             });
         }, 300));

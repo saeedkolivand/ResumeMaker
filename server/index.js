@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const puppeteer = require('puppeteer');
 const path = require('path');
 const fs = require('fs');
-const cors = require('cors')
+const cors = require('cors');
 const hbs = require('handlebars');
 
 const port = process.env.PORT || 5000;
@@ -37,10 +37,10 @@ app.post('/create-pdf', async (req, res) => {
             format: 'A4',
             printBackground: true
         });
-        console.log('pdf created succfully!');
+        console.log('pdf created successfully!');
         await browser.close();
     } catch (e) {
-        console.log('error occured in /create-pdf : ' + e);
+        console.log('error occurred in /create-pdf : ' + e);
 
     }
     //})();
