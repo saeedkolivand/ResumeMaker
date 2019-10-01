@@ -80,13 +80,13 @@ class Contact extends Component {
                 <p>اطلاعات تماس</p>
                 <div id="formWrapper">
                     <Input id="phoneNumberInput" changed={this.handleAddPhoneNumber} value={this.state.contactInfo}
-                       placeholder="شماره همراه خود را وارد کنید" autocomplete="on" type="number" name="phoneNumber" /> <br />
+                       placeholder="شماره همراه" autocomplete="on" type="number" name="phoneNumber" /> <br />
                     <Input id="emailInput" changed={this.handleAddEmail} value={this.state.contactInfo}
-                       placeholder="ایمیل خود را وارد کنید" autocomplete="on" type="email" name="Email" /> <br />
+                       placeholder="ایمیل" autocomplete="on" type="email" name="Email" /> <br />
                     <Input id="linkedInInput" changed={this.handleAddLinkedIn} value={this.state.contactInfo}
-                       placeholder="آدرس لینکدین خود را وارد کنید" autocomplete="off" type="link" name="linkedIn" /> <br />
+                       placeholder="آدرس لینکدین" autocomplete="off" type="link" name="linkedIn" /> <br />
                     <Input id="githubInput" changed={this.handleAddGithub} value={this.state.contactInfo}
-                       placeholder="آدرس گیت هاب خود را وارد کنید" autocomplete="off" type="link" name="github" />
+                       placeholder="آدرس گیت هاب" autocomplete="off" type="link" name="github" />
                 </div>
                 <Button bgColor="#0099ff" color="white" clicked={this.handleSubmit}>
                     مرحله بعد

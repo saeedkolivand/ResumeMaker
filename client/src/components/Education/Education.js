@@ -17,28 +17,44 @@ class Education extends Component {
     }
 
     degreeList = () => [
-        'دیپلم','کاردانی','کارشناسی',
-        'کارشناسی ارشد', 'دکتری'
+        'دیپلم',
+        'کاردانی',
+        'کارشناسی',
+        'کارشناسی ارشد',
+        'دکتری'
     ];
 
     monthList = () => [
-        'فروردین','اردیبهشت','خرداد',
-        'تیر', 'مرداد','شهریور',
-        'مهر','آبان','آذر',
-        'دی','بهمن','اسفند'
+        'فروردین',
+        'اردیبهشت',
+        'خرداد',
+        'تیر',
+        'مرداد',
+        'شهریور',
+        'مهر',
+        'آبان',
+        'آذر',
+        'دی',
+        'بهمن',
+        'اسفند'
     ];
 
     yearList = () => {
         let years = [];
-        for (let i = 1350; i <= 1398; i++) {
+        for (let i = 1398; i >= 1350; i--) {
             years.push(i);
         }
         return years;
     };
 
-    currentEducation = { degree: '', university: '', month: '', year: '' };
+    currentEducation = { degree: '', major:'', university: '', month: '', year: '' };
+
     handleDegree = (event) => {
         this.currentEducation.degree = event.target.value;
+    };
+
+    handleMajor = (event) => {
+        this.currentEducation.major = event.target.value;
     };
 
     handleUniversity = (event) => {
@@ -55,21 +71,35 @@ class Education extends Component {
 
     handleAddEducation = () => {
         let oldEducation = [...this.state.education];
-        if (this.currentEducation.degree.length) {
-            oldEducation.push({ degree: this.currentEducation.degree, university: this.currentEducation.university,
-                month: this.currentEducation.month, year: this.currentEducation.year });
+        if (this.currentEducation.degree.length && this.currentEducation.major.length) {
+            oldEducation.push({
+                degree: this.currentEducation.degree,
+                major: this.currentEducation.major,
+                university: this.currentEducation.university,
+                month: this.currentEducation.month,
+                year: this.currentEducation.year
+            });
             this.setState({ education: oldEducation });
-            this.currentEducation = { degree: '', fromMonth: '', fromYear:'' };
+            this.currentEducation = {
+                degree: '',
+                major:'',
+                university: '',
+                fromMonth: '',
+                fromYear:''
+            };
             document.getElementById('degreeSelector').value = '';
+            document.getElementById('majorInput').value = '';
             document.getElementById('degreeSelector').focus();
             document.getElementById('universityInput').value = '';
             document.getElementById('monthSelector').value = '-';
             document.getElementById('yearSelector').value = '-';
         } else {
             const degreeSelector = document.getElementById('degreeSelector');
+            const majorInput = document.getElementById('majorInput');
             const borderStyle = "1px solid red";
-            if (!degreeSelector.value.length) {
+            if (!degreeSelector.value.length && !majorInput.value.length) {
                 degreeSelector.style.border = borderStyle;
+                majorInput.style.border = borderStyle;
             }
         }
     };
@@ -104,9 +134,15 @@ class Education extends Component {
             element = this.state.education.map((education, i) => {
                 return (
                     <div className="addedEducationBox" key={i}>
-                        <div className="addedEducationText">
-                            {` مدرک: ${education.degree} نام محل اخذ مدرک: ${education.university} تاریخ اخذ مدرک: ${education.month} ${education.year} `}
-                        </div><br />
+                        <label className="addedEducationBoxLabels">مدرک:</label>
+                        <p className="addedEducationBoxOutputs">{education.degree}</p>
+                        <label className="addedEducationBoxLabels">رشته:</label>
+                        <p className="addedEducationBoxOutputs">{education.major}</p><br/>
+                        <label className="addedEducationBoxLabels">نام محل اخذ مدرک:</label>
+                        <p className="addedEducationBoxOutputs">{education.university}</p>
+                        <label className="addedEducationBoxLabels">تاریخ اخذ مدرک:</label>
+                        <p className="addedEducationBoxOutputs">{education.month}</p>
+                        <p className="addedEducationBoxOutputs">{education.year}</p>
                         <div className="deleteIcon" onClick={() => this.handleDeleteEducation(i)} />
                     </div>
                 );
@@ -129,8 +165,10 @@ class Education extends Component {
                 <p>سوابق تحصیلی</p>
                 <div id="formWrapper">
                     <label>مدرک:</label><Select id="degreeSelector" changed={this.handleDegree} options={this.degreeList()} />
+                    <label>رشته:</label><Input id="majorInput" changed={this.handleMajor} value={this.state.education}
+                                                    placeholder="نام رشته تحصیلی" autocomplete="off" type="text" name="majorInput" />
                     <label>محل تحصیل:</label><Input id="universityInput" changed={this.handleUniversity} value={this.state.education}
-                                                placeholder="نام محل تحصیل خود را وارد کنید" autocomplete="off" type="text" name="universityInput" /><br />
+                                                placeholder="نام محل تحصیل" autocomplete="off" type="text" name="universityInput" /><br />
                     <label>ماه اخذ مدرک:</label><Select id="monthSelector" changed={this.handleMonth} options={this.monthList()} />
                     <label>سال اخذ مدرک:</label><Select id="yearSelector" changed={this.handleYear} options={this.yearList()} />
                     <Button clicked={this.handleAddEducation} bgColor="#ff6666" color="white">+</Button><br/>

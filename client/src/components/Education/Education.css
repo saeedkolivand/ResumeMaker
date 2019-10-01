@@ -26,14 +26,25 @@
 }
 
 
-#education #formWrapper input {
+#education #formWrapper #majorInput {
     margin: 0 auto;
-    width: 40%;
+    width: 20%;
     height: 55px;
     display: inline-block;
 }
 
-#education #formWrapper input:hover {
+#education #formWrapper #majorInput:hover {
+    border-color: cornflowerblue;
+}
+
+#education #formWrapper #universityInput {
+    margin: 15px 0 0 auto;
+    width: 33%;
+    height: 55px;
+    display: inline-block;
+}
+
+#education #formWrapper #universityInput:hover {
     border-color: cornflowerblue;
 }
 
@@ -68,7 +79,6 @@
 
 #education #formWrapper .addedEducationBox {
     width: 80%;
-    height: 40px;
     display: inline-block;
     padding: 20px 30px;
     margin: 25px 10px 0px 10px;
@@ -77,10 +87,16 @@
     box-shadow: 0px 0px 50px #e6e6e6;
 }
 
-#education #formWrapper .addedEducationBox .addedEducationText {
-    direction: rtl;
-    margin: -14px auto 0;
+#education #formWrapper .addedEducationBox .addedEducationBoxLabels {
+    display: inline-block;
+    margin: 10px 0 10px 0;
     font-size: 1.3rem;
+}
+
+#education #formWrapper .addedEducationBox .addedEducationBoxOutputs {
+    display: inline-block;
+    margin: 0 10px auto;
+    font-size: 1.2rem;
 }
 
 #education #formWrapper .addedEducationBox .deleteIcon {
