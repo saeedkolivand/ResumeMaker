@@ -31,42 +31,100 @@
 
         #header h2 {
             margin-right: 32px;
+            opacity: 0.5;
         }
 
         #headerDivider {
             width: 100%;
             height: 8px;
             background-color: rgb(160, 160, 160);
-            {{!-- margin: 0 auto; --}}
+
+                {
+                    {
+                     !-- margin: 0 auto;
+                    --
+                }
+            }
         }
 
         #rightPanel {
             width: 20%;
-            height: 300px;
             float: right;
         }
 
+        #education li {
+            list-style: dotted;
+        }
+
+        #education li h4 {
+            font-size: 1.2rem;
+        }
+
+        #education li h5,
+        #education li h6 {
+            font-size: 1.1rem;
+            margin-right: 16px;
+            margin-top: 16px;
+            opacity: 0.5;
+        }
+
+        #education li h4 {
+            margin-top: 8px;
+        }
+
+        #skills li h4 {
+            opacity: 0.5;
+            margin: 8px;
+            display: inline-block;
+        }
+
+        #contactPanel #contacts {
+            opacity: 0.5;
+        }
+
+        #contactPanel #contacts h3 {
+            font-size: 1.2rem;
+            margin-top: 16px;
+        }
+
+
+        #contactPanel #contacts h4 {
+            font-size: 1.1rem;
+            margin-top: 16px;
+        }
+
+        #skills li h4 {
+            display: inline-block;
+            margin-top: 16px;
+            opacity: 1;
+        }
+
+        #skills li h5 {
+            opacity: 0.5;
+            float: left;
+            margin-top: 16px;
+        }
+
         #leftPanel {
-            width: 65%;
-            height: 300px;
+            width: 70%;
             float: right;
             margin-right: 50px;
         }
 
         #education,
         #skills,
-        #contact,
-        #aboutMe ,
+        #contactPanel,
+        #aboutMe,
         #workExperience {
             padding: 8px;
         }
 
         #panelsDivider {
-            height: 300px;
+            height: 75%;
             width: 2px;
             background-color: rgb(160, 160, 160);
             position: absolute;
-            right: 26%;
+            right: 22%;
         }
 
         .headerDivider {
@@ -74,6 +132,42 @@
             height: 2px;
             margin-top: 8px;
             background-color: rgb(160, 160, 160);
+        }
+
+        #aboutMe h3 {
+            display: inline-block;
+        }
+
+        #aboutMe h4 {
+            float: left;
+            opacity: 0.5;
+        }
+
+        #aboutMe p {
+            margin-right: 8px;
+            margin-top: 16px;
+        }
+
+        #workExperience div h2 {
+            display: inline-block;
+            font-size: 1.3rem;
+            margin-top: 16px;
+            margin-right: 8px;
+        }
+
+
+        #workExperience div h3 {
+            margin-right: 16px;
+            font-size: 1.2rem;
+            margin-top: 8px;
+            opacity: 0.5;
+        }
+
+        #workExperience div h4 {
+            float: left;
+            font-size: 1.1rem;
+            margin-top: 16px;
+            opacity: 0.5;
         }
     </style>
 </head>
@@ -87,28 +181,62 @@
     <div id="rightPanel">
         <div id="education">
             <h3>تحصیلات</h3>
-                <div class="headerDivider"></div>
+            <div class="headerDivider"></div>
+            <ul>
+                {{#each education}}
+                <li>
+                    <h4>{{this.degree}} {{this.major}}</h4>
+                    <h5>{{this.university}}</h5>
+                    <h6>{{this.month}}/{{this.year}}</h6>
+                </li>
+                {{/each}}
+            </ul>
+
         </div>
         <div id="skills">
             <h3>مهارت ها</h3>
             <div class="headerDivider"></div>
+            <ul>
+                {{#each skills}}
+                <li>
+                    <h4>{{this.skillText}}</h4>
+                    <h5>{{this.level}}</h5>
+                </li>
+                {{/each}}
+            </ul>
+
         </div>
 
 
-        <div id="contact">
-            <h3>تماس با ما</h3>
+        <div id="contactPanel">
+            <h3>راه های ارتباطی</h3>
             <div class="headerDivider"></div>
+            <div id="contacts">
+                <h3>{{contactInfo.email}}</h3>
+                <h3>{{contactInfo.phoneNumber}}</h3>
+                <h4>{{contactInfo.github}}</h4>
+                <h4>{{contactInfo.linkedIn}}</h4>
+            </div>
         </div>
     </div>
     <div id="panelsDivider"></div>
     <div id="leftPanel">
         <div id="aboutMe">
             <h3>درباره من</h3>
+            <h4>{{personalInfo.sex}} - {{personalInfo.birthYear}}</h4>
             <div class="headerDivider"></div>
+            <p>{{personalInfo.aboutMe}}</p>
         </div>
         <div id="workExperience">
             <h3>سابقه کاری</h3>
             <div class="headerDivider"></div>
+            {{#each experiences}}
+            <div>
+                <h2>{{this.jobTitle}}</h2>
+                <h4>{{this.toMonth}}/{{this.toYear}} - {{this.fromMonth}}/{{this.fromYear}}</h4>
+                <h3>{{this.companyName}}</h3>
+            </div>
+            {{/each}}
         </div>
     </div>
 </body>

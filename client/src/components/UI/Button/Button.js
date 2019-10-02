@@ -10,7 +10,7 @@ const Button = props => {
     
 
     return (
-        <button id="button" style={styleBtn} onClick={props.clicked}>
+        <button id={props.id ? props.id : 'button'} style={styleBtn} onClick={props.clicked}>
             {props.children}
         </button>
     )

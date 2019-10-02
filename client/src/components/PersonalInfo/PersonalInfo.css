@@ -28,7 +28,6 @@
 }
 
 #PersonalInfo #form-wrapper label {
-    display: inline-block;
     float: right;
     font-size: 1.3rem;
     /*margin-right: 100px;*/
@@ -55,9 +54,14 @@
     background-color: #e6e6e6;
     height: 50px;
     width: 100%;
+    max-width: 600px;
+    min-width: 400px;
+    max-height: 500px;
+    min-height: 200px;
     font-size: 1.1rem;
     font-family: nazanin;
     text-align: center;
+    margin-right: -20px;
 }
 
 #PersonalInfo #form-wrapper #aboutMe:focus {

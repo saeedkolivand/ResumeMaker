@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './WorkExperience.css';
 import Input from "../UI/Input/Input";
 import Button from "../UI/Button/Button";
@@ -74,7 +74,7 @@ class WorkExperience extends Component {
             toYear: this.currentExperience.toYear,
             toMonth: this.currentExperience.toMonth
         });
-        this.setState({experiences: oldExperiences});
+        this.setState({ experiences: oldExperiences });
         this.currentExperience = {
             jobTitle: '',
             companyName: '',
@@ -124,16 +124,16 @@ class WorkExperience extends Component {
                 return (
                     <div className="addedExperienceBox" key={i}>
                         <label className="addedExperienceBoxLabels">سمت:</label><p
-                        className="addedExperienceBoxOutputs">{experience.jobTitle}</p>
+                            className="addedExperienceBoxOutputs">{experience.jobTitle}</p>
                         <label className="addedExperienceBoxLabels">نام شرکت:</label><p
-                        className="addedExperienceBoxOutputs">{experience.companyName}</p><br/>
+                            className="addedExperienceBoxOutputs">{experience.companyName}</p><br />
                         <label className="addedExperienceBoxLabels">از:</label><p
-                        className="addedExperienceBoxOutputs">{experience.fromMonth}</p><p
-                        className="addedExperienceBoxOutputs">{experience.fromYear}</p>
+                            className="addedExperienceBoxOutputs">{experience.fromMonth}</p><p
+                                className="addedExperienceBoxOutputs">{experience.fromYear}</p>
                         <label className="addedExperienceBoxLabels">تا:</label><p
-                        className="addedExperienceBoxOutputs">{experience.toMonth}</p><p
-                        className="addedExperienceBoxOutputs">{experience.toYear}</p>
-                        <div className="deleteIcon" onClick={() => this.handleDeleteExperience(i)}/>
+                            className="addedExperienceBoxOutputs">{experience.toMonth}</p><p
+                                className="addedExperienceBoxOutputs">{experience.toYear}</p>
+                        <div className="deleteIcon" onClick={() => this.handleDeleteExperience(i)} />
                     </div>
                 );
             })
@@ -155,18 +155,18 @@ class WorkExperience extends Component {
                 <p>سوابق شغلی</p>
                 <div id="formWrapper">
                     <Input id="jobTitleInput" changed={this.handleJobTitle} value={this.state.experiences}
-                           placeholder="عنوان شغلی" autocomplete="off" type="text" name="jobTitle"/>
+                        placeholder="عنوان شغلی" autocomplete="off" type="text" name="jobTitle" />
                     <Input id="companyNameInput" changed={this.handleCompanyName} value={this.state.experiences}
-                           placeholder="نام شرکت" autocomplete="off" type="text" name="companyName"/> <br/>
+                        placeholder="نام شرکت" autocomplete="off" type="text" name="companyName" /> <br />
                     <label>سال شروع</label><Select id="fromYearSelector" changed={this.handleFromYear}
-                                                   options={this.yearList()}/>
+                        options={this.yearList()} />
                     <label>ماه شروع</label><Select id="fromMonthSelector" changed={this.handleFromMonth}
-                                                   options={this.monthList()}/>
+                        options={this.monthList()} />
                     <label>سال پایان</label><Select id="toYearSelector" changed={this.handleToYear}
-                                                    options={this.yearList()}/>
+                        options={this.yearList()} />
                     <label>ماه پایان</label><Select id="toMonthSelector" changed={this.handleToMonth}
-                                                    options={this.monthList()}/>
-                    <Button clicked={this.handleAddExperience} bgColor="#ff6666" color="white">+</Button><br/>
+                        options={this.monthList()} />
+                    <Button clicked={this.handleAddExperience} bgColor="#ff6666" color="white">+</Button><br />
                     {this.experienceContainerRenderer()}
                 </div>
                 <Button bgColor="#0099ff" color="white" clicked={this.handleSubmit}>

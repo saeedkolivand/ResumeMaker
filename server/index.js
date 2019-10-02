@@ -34,6 +34,7 @@ app.post('/create-pdf', async (req, res) => {
 
         await page.pdf({
             path: 'resume.pdf',
+            landscape: true,
             format: 'A4',
             printBackground: true
         });

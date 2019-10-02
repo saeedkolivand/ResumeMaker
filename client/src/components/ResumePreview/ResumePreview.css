@@ -10,34 +10,35 @@ body {
     height: 100%;
     font-family: "B nazanin";
 } */
+
 #resumePreview {
     width: 100%;
     height: 100%;
     direction: rtl;
 }
 
-
 #resumePreview #header {
     width: 100%;
     padding: 50px 100px 30px 80px;
 }
 
-#resumePreview #header h1{
+#resumePreview #header h1 {
     margin-bottom: 32px;
 }
 
 #resumePreview #header h2 {
     margin-right: 32px;
+    opacity: 0.5;
 }
 
 #resumePreview #header button {
     position: absolute;
     top: 10%;
-    left : 5%;
+    left: 5%;
     width: 10%;
     font-family: nazanin;
     font-size: 1.4rem;
-    box-shadow:  0 0 10px rgb(160, 160, 160);
+    box-shadow: 0 0 10px rgb(160, 160, 160);
 }
 
 #resumePreview #headerDivider {
@@ -58,12 +59,45 @@ body {
     margin-right: 150px;
 }
 
-#resumePreview #educationPanel,
-#resumePreview #skillsPanel,
-#resumePreview #contactPanel,
-#resumePreview #abouteMe , 
+#resumePreview #educationPanel, 
+#resumePreview #skillsPanel, 
+#resumePreview #contactPanel, 
+#resumePreview #abouteMe, 
 #resumePreview #workExperienceContainer {
     padding: 32px 50px 50px 0;
+}
+
+#resumePreview #educationPanel li h4 {
+    font-size: 1.2rem;
+}
+
+#resumePreview #educationPanel li h5, #resumePreview #educationPanel li h6 {
+    font-size: 1.1rem;
+    margin-right: 8px;
+    margin-top: 8px;
+    opacity: 0.5;
+}
+
+#resumePreview #educationPanel li,
+#resumePreview #skillsPanel li ,
+#resumePreview #workExperienceContainer #experiences,
+#resumePreview #contactPanel #contacts{
+    margin-top: 8px;
+    margin-right: 32px;
+    margin-left: 8px;
+    font-size: 1.1rem;
+}
+
+#resumePreview #skillsPanel li h4 {
+    opacity: 0.5;
+    margin: 8px;
+    display: inline-block;
+}
+
+#resumePreview #skillsPanel li h5 {
+    opacity: 0.5;
+    float: left;
+    margin-top: 8px;
 }
 
 #resumePreview #panelsDivider {
@@ -79,4 +113,56 @@ body {
     height: 2px;
     margin-top: 8px;
     background-color: rgb(160, 160, 160);
+}
+
+p {
+    margin: 16px;
+    font-size: 1.1rem;
+    overflow: hidden;
+    overflow-wrap: break-word;
+}
+
+#resumePreview #workExperienceContainer div div h2 {
+    font-size: 1.3rem;
+    display: inline-block;
+    margin-top: 16px;
+}
+
+
+#resumePreview #workExperienceContainer div div h3 {
+    font-size: 1.2rem;
+    margin-top: 8px;
+    margin-right: 8px;
+    opacity: 0.5;
+}
+
+#resumePreview #workExperienceContainer div div h4 {
+    float: left;
+    font-size: 1.1rem;
+    opacity: 0.5;
+    margin-top: 16px;
+}
+
+#resumePreview #contactPanel #contacts {
+    opacity: 0.5;
+}
+
+#resumePreview #contactPanel #contacts h3 {
+    font-size: 1.2rem;
+    margin-top: 16px;
+}
+
+
+#resumePreview #contactPanel #contacts h4 {
+    font-size: 1.1rem;
+    margin-top: 16px;
+}
+
+#resumePreview #abouteMe h3 {
+    display: inline-block;
+}
+#resumePreview #abouteMe h4 {
+    float: left;
+    opacity: 0.5;
+    margin-bottom: 8px;
 }

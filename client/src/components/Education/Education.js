@@ -164,14 +164,29 @@ class Education extends Component {
             <div id="education" style={educationStyle}>
                 <p>سوابق تحصیلی</p>
                 <div id="formWrapper">
-                    <label>مدرک:</label><Select id="degreeSelector" changed={this.handleDegree} options={this.degreeList()} />
-                    <label>رشته:</label><Input id="majorInput" changed={this.handleMajor} value={this.state.education}
-                                                    placeholder="نام رشته تحصیلی" autocomplete="off" type="text" name="majorInput" />
+                    <label>مدرک:</label>
+                    <Select 
+                        id="degreeSelector" 
+                        changed={this.handleDegree} 
+                        options={this.degreeList()} />
+                    <label>رشته:</label>
+                    <Input 
+                        id="majorInput" 
+                        changed={this.handleMajor} 
+                        value={this.state.education}
+                        placeholder="نام رشته تحصیلی" 
+                        autocomplete="off" 
+                        type="text" 
+                        name="majorInput" /><br />
                     <label>محل تحصیل:</label><Input id="universityInput" changed={this.handleUniversity} value={this.state.education}
                                                 placeholder="نام محل تحصیل" autocomplete="off" type="text" name="universityInput" /><br />
                     <label>ماه اخذ مدرک:</label><Select id="monthSelector" changed={this.handleMonth} options={this.monthList()} />
                     <label>سال اخذ مدرک:</label><Select id="yearSelector" changed={this.handleYear} options={this.yearList()} />
-                    <Button clicked={this.handleAddEducation} bgColor="#ff6666" color="white">+</Button><br/>
+                    <Button 
+                        id="addEducationBtn"
+                        clicked={this.handleAddEducation} 
+                        bgColor="#ff6666" 
+                        color="white">+</Button><br/>
                     {this.educationContainerRenderer()}
                 </div>
                 <Button bgColor="#0099ff" color="white" clicked={this.handleSubmit}>

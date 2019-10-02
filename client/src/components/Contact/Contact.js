@@ -6,7 +6,6 @@ import Button from "../UI/Button/Button";
 class Contact extends Component {
 
     state = {
-        contactInfo: [],
         outAnim: false
     };
 
@@ -33,21 +32,16 @@ class Contact extends Component {
     };
 
     handleSubmit = () => {
-        let oldContactInfo = [...this.state.contactInfo];
+        const contact = this.currentContactInfo;
         if (this.currentContactInfo.phoneNumber.length && this.currentContactInfo.email.length) {
-            oldContactInfo.push({
-                phoneNumber: this.currentContactInfo.phoneNumber,
-                linkedIn: this.currentContactInfo.linkedIn, github: this.currentContactInfo.github
-            });
             this.setState({
-                contactInfo: oldContactInfo,
                 outAnim: true
             }, () => setTimeout(() => {
                 this.props.history.push({
                     pathname: '/resumePreview',
                     state: {
                         ...this.props.location.state,
-                        contactInfo: this.state.contactInfo
+                        contactInfo: contact
                     }
                 });
             }, 300));
@@ -63,6 +57,10 @@ class Contact extends Component {
             if (!phoneNumberInput.value.length && !emailInput.value.length) {
                 phoneNumberInput.style.border = borderStyle;
                 emailInput.style.border = borderStyle;
+            }else if (!emailInput.value.length){
+                emailInput.style.border = borderStyle;
+            }else if(!phoneNumberInput.value.length){
+                phoneNumberInput.style.border = borderStyle;
             }
         }
     };
