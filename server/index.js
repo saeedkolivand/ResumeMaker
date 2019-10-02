@@ -33,8 +33,8 @@ app.post('/create-pdf', async (req, res) => {
         await page.emulateMedia('screen');
 
         await page.pdf({
-            path: 'resume.pdf',
-            landscape: true,
+            path: 'resume.pdf',/* 
+            landscape: true, */
             format: 'A4',
             printBackground: true
         });
