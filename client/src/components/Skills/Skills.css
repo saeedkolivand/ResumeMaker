@@ -57,6 +57,7 @@
     background-color: #f1f1f1;
     border: 1px solid cornflowerblue;
     box-shadow: 0 0 50px #eeeeee;
+    border-radius: 10px;
 }
 
 #skills #formWrapper .addedSkillBox .addedSkillText {

@@ -123,16 +123,10 @@ class WorkExperience extends Component {
             element = this.state.experiences.map((experience, i) => {
                 return (
                     <div className="addedExperienceBox" key={i}>
-                        <label className="addedExperienceBoxLabels">سمت:</label><p
-                            className="addedExperienceBoxOutputs">{experience.jobTitle}</p>
-                        <label className="addedExperienceBoxLabels">نام شرکت:</label><p
-                            className="addedExperienceBoxOutputs">{experience.companyName}</p><br />
-                        <label className="addedExperienceBoxLabels">از:</label><p
-                            className="addedExperienceBoxOutputs">{experience.fromMonth}</p><p
-                                className="addedExperienceBoxOutputs">{experience.fromYear}</p>
-                        <label className="addedExperienceBoxLabels">تا:</label><p
-                            className="addedExperienceBoxOutputs">{experience.toMonth}</p><p
-                                className="addedExperienceBoxOutputs">{experience.toYear}</p>
+                        <p className="addedExperienceBoxOutputs"><label> سمت:</label>{experience.jobTitle}</p>
+                        <p className="addedExperienceBoxOutputs"><label> نام شرکت:</label>{experience.companyName}</p><br />
+                        <p className="addedExperienceBoxOutputs"><label> از:</label>{experience.fromMonth} {experience.fromYear}</p>
+                        <p className="addedExperienceBoxOutputs"><label> تا:</label>{experience.toMonth} {experience.toYear}</p>
                         <div className="deleteIcon" onClick={() => this.handleDeleteExperience(i)} />
                     </div>
                 );

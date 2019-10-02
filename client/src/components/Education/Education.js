@@ -134,15 +134,10 @@ class Education extends Component {
             element = this.state.education.map((education, i) => {
                 return (
                     <div className="addedEducationBox" key={i}>
-                        <label className="addedEducationBoxLabels">مدرک:</label>
-                        <p className="addedEducationBoxOutputs">{education.degree}</p>
-                        <label className="addedEducationBoxLabels">رشته:</label>
-                        <p className="addedEducationBoxOutputs">{education.major}</p><br/>
-                        <label className="addedEducationBoxLabels">نام محل اخذ مدرک:</label>
-                        <p className="addedEducationBoxOutputs">{education.university}</p>
-                        <label className="addedEducationBoxLabels">تاریخ اخذ مدرک:</label>
-                        <p className="addedEducationBoxOutputs">{education.month}</p>
-                        <p className="addedEducationBoxOutputs">{education.year}</p>
+                        <p className="addedEducationBoxOutputs"><label> مدرک:</label>{education.degree}</p>
+                        <p className="addedEducationBoxOutputs"><label> رشته:</label>{education.major}</p><br/>
+                        <p className="addedEducationBoxOutputs"><label> نام محل اخذ مدرک:</label>{education.university}</p>
+                        <p className="addedEducationBoxOutputs"><label> تاریخ اخذ مدرک:</label>{education.month} - {education.year}</p>
                         <div className="deleteIcon" onClick={() => this.handleDeleteEducation(i)} />
                     </div>
                 );
