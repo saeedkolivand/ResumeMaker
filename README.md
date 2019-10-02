@@ -32,6 +32,6 @@ for editing the react part :
 
 ## Authors
 
-* **Hosein Fathi** - *complete server and some client* - [hosein-fatthi](https://github.com/hosein-fatthi)
-* **Saeed Kolivand** - *complete client and some server* - [saeedkolivand](https://github.com/saeedkolivand)
+* **Hosein Fathi**  - [hosein-fatthi](https://github.com/hosein-fatthi)
+* **Saeed Kolivand** - [saeedkolivand](https://github.com/saeedkolivand)
 
