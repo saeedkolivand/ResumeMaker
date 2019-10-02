@@ -32,6 +32,6 @@ for editing the react part :
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Hosein Fathi** - *complete server and some client* - [hosein-fatthi](https://github.com/hosein-fatthi)
+* **Hosein Fathi** - *complete client and some server* - [hosein-fatthi](https://github.com/hosein-fatthi)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
