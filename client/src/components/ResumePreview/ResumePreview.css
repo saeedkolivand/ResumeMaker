@@ -59,11 +59,7 @@ body {
     margin-right: 150px;
 }
 
-#resumePreview #educationPanel, 
-#resumePreview #skillsPanel, 
-#resumePreview #contactPanel, 
-#resumePreview #abouteMe, 
-#resumePreview #workExperienceContainer {
+#resumePreview #educationPanel, #resumePreview #skillsPanel, #resumePreview #contactPanel, #resumePreview #abouteMe, #resumePreview #workExperienceContainer {
     padding: 32px 50px 50px 0;
 }
 
@@ -78,10 +74,7 @@ body {
     opacity: 0.5;
 }
 
-#resumePreview #educationPanel li,
-#resumePreview #skillsPanel li ,
-#resumePreview #workExperienceContainer #experiences,
-#resumePreview #contactPanel #contacts{
+#resumePreview #educationPanel li, #resumePreview #skillsPanel li, #resumePreview #workExperienceContainer #experiences, #resumePreview #contactPanel #contacts {
     margin-top: 8px;
     margin-right: 32px;
     margin-left: 8px;
@@ -89,7 +82,9 @@ body {
 }
 
 #resumePreview #skillsPanel li h4 {
-    opacity: 0.5;
+    max-width: 70%;
+    overflow-wrap: break-word;
+    opacity: 1;
     margin: 8px;
     display: inline-block;
 }
@@ -125,9 +120,10 @@ p {
 #resumePreview #workExperienceContainer div div h2 {
     font-size: 1.3rem;
     display: inline-block;
+    max-width: 60%;
+    overflow-wrap: break-word;
     margin-top: 16px;
 }
-
 
 #resumePreview #workExperienceContainer div div h3 {
     font-size: 1.2rem;
@@ -137,6 +133,8 @@ p {
 }
 
 #resumePreview #workExperienceContainer div div h4 {
+    max-width: 40%;
+    overflow-wrap: break-word;
     float: left;
     font-size: 1.1rem;
     opacity: 0.5;
@@ -148,12 +146,15 @@ p {
 }
 
 #resumePreview #contactPanel #contacts h3 {
+    max-width: 90%;
+    overflow-wrap: break-word;
     font-size: 1.2rem;
     margin-top: 16px;
 }
 
-
 #resumePreview #contactPanel #contacts h4 {
+    max-width: 90%;
+    overflow-wrap: break-word;
     font-size: 1.1rem;
     margin-top: 16px;
 }
@@ -161,8 +162,14 @@ p {
 #resumePreview #abouteMe h3 {
     display: inline-block;
 }
+
 #resumePreview #abouteMe h4 {
     float: left;
     opacity: 0.5;
     margin-bottom: 8px;
+}
+
+#resumePreview #abouteMe h4 p {
+    max-width: 90%;
+    overflow-wrap: break-word;
 }
