@@ -56,51 +56,56 @@ class PersonalInfo extends Component {
             this.personalInfoData.birthYear = event.target.value;
         } else if (event.target.id === "aboutMe") {
             this.personalInfoData.aboutMe = event.target.value;
+        } else if (event.target.id === "city") {
+            this.personalInfoData.city = event.target.value;
         }
+
+        
     };
 
-    renderCities = () => [
-        'آذربایجان شرقی','آذربایجان غربی','اردبیل','اصفهان',
-        'البرز','ایلام','بوشهر','تهران','چهارمحال و بختیاری','خراسان جنوبی','خراسان رضوی','خراسان شمالی','خوزستان',
-        'زنجان','سمنان','سیستان و بلوچستان','فارس','قزوین','قم','کردستان','کرمان','کرمانشاه',
-        'کهگیلویه وبویراحمد','گلستان','گیلان','لرستان','مازندران','مرکزی','هرمزگان','همدان','یزد'
-    ];
+    
 
-    render() {
 
-        let personalInfoStyle = {};
-        console.log('PersonalInfo', this.state);
-        if (this.state.outAnim) {
-            personalInfoStyle = {
-                transform: 'translateX(500px)',
-                opacity: 1
-            }
+renderCities = () => [
+    'آذربایجان شرقی', 'آذربایجان غربی', 'اردبیل', 'اصفهان',
+    'البرز', 'ایلام', 'بوشهر', 'تهران', 'چهارمحال و بختیاری', 'خراسان جنوبی', 'خراسان رضوی', 'خراسان شمالی', 'خوزستان',
+    'زنجان', 'سمنان', 'سیستان و بلوچستان', 'فارس', 'قزوین', 'قم', 'کردستان', 'کرمان', 'کرمانشاه',
+    'کهگیلویه وبویراحمد', 'گلستان', 'گیلان', 'لرستان', 'مازندران', 'مرکزی', 'هرمزگان', 'همدان', 'یزد'
+];
+
+render() {
+    let personalInfoStyle = {};
+    if (this.state.outAnim) {
+        personalInfoStyle = {
+            transform: 'translateX(500px)',
+            opacity: 1
         }
-
-        return (
-            <div id="PersonalInfo" style={personalInfoStyle}>
-                <p>اطلاعات فردی خودتونو وارد کنید</p>
-                <div id="form-wrapper">
-                    <Input id="fullName" changed={this.handleInputChange} placeholder="نام و نام خانوادگی"
-                        autoComplete="off" type="text" name="fullName" /><br />
-                    <Input id="jobTitle" changed={this.handleInputChange} autoComplete="off" placeholder="عنوان شغلی"
-                        type="text" /><br />
-                    <label>جنسیت: </label>
-                    <Select id="sex" changed={this.handleInputChange}
-                        options={['مرد', 'زن']} /><br />
-                    <label>استان سکونت:</label>
-                    <Select id="city" changed={this.handleInputChange}
-                        options={this.renderCities()} /><br />
-                    <label id="yearLabel">سال تولد: </label>
-                    <Select id="birthYear" changed={this.handleInputChange} options={this.createSelectItems()} /><br />
-                    <textarea id="aboutMe" onChange={this.handleInputChange} placeholder="درباره من" />
-                </div>
-                <Button bgColor="#0099ff" color="white" clicked={this.clickHandler}>
-                    مرحله بعد
-                </Button>
-            </div>
-        );
     }
+
+    return (
+        <div id="PersonalInfo" style={personalInfoStyle}>
+            <p>اطلاعات فردی خودتونو وارد کنید</p>
+            <div id="form-wrapper">
+                <Input id="fullName" changed={this.handleInputChange} placeholder="نام و نام خانوادگی"
+                    autoComplete="off" type="text" name="fullName" /><br />
+                <Input id="jobTitle" changed={this.handleInputChange} autoComplete="off" placeholder="عنوان شغلی"
+                    type="text" /><br />
+                <label>جنسیت: </label>
+                <Select id="sex" changed={this.handleInputChange}
+                    options={['مرد', 'زن']} /><br />
+                <label>استان سکونت:</label>
+                <Select id="city" changed={this.handleInputChange}
+                    options={this.renderCities()} /><br />
+                <label id="yearLabel">سال تولد: </label>
+                <Select id="birthYear" changed={this.handleInputChange} options={this.createSelectItems()} /><br />
+                <textarea id="aboutMe" onChange={this.handleInputChange} placeholder="درباره من" />
+            </div>
+            <Button bgColor="#0099ff" color="white" clicked={this.clickHandler}>
+                مرحله بعد
+                </Button>
+        </div>
+    );
+}
 }
 
 export default PersonalInfo;
