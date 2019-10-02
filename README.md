@@ -12,7 +12,7 @@ for running the app you should install [NodeJs](https://www.nodejs.org/en/) it's
 
 ## Deployment
 
-for running the app you should do following steps:
+for running the app you should :
  - change directory to server folder
  - run the code ```npm install``` and wait to download beeing completed.
  - run ```node index.js``` for starting the server
