@@ -27,7 +27,7 @@ class ResumePreview extends Component {
     };
 
     componentDidMount() {
-
+        
         axios.post('/create-pdf', this.props.location);
     }
 
@@ -122,7 +122,7 @@ class ResumePreview extends Component {
                 <div id="leftPanel" >
                     <div id="abouteMe" >
                         <h3>درباره من</h3>
-                        <h4>{this.props.location.state.personalInfo.sex} - {this.props.location.state.personalInfo.birthYear}</h4>
+                        <h4>{this.props.location.state.personalInfo.city} - {this.props.location.state.personalInfo.sex} - {this.props.location.state.personalInfo.birthYear}</h4>
                         <div className="headerDivider"></div>
                         <p>{this.props.location.state.personalInfo.aboutMe}</p>
                     </div>
@@ -131,7 +131,7 @@ class ResumePreview extends Component {
                         <div className="headerDivider" ></div>
                         <div id="experiences" >
                             {this.renderWorkExperience()}
-                            
+
                         </div>
                     </div>
                 </div>
