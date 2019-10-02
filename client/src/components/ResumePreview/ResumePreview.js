@@ -131,6 +131,7 @@ class ResumePreview extends Component {
                         <div className="headerDivider" ></div>
                         <div id="experiences" >
                             {this.renderWorkExperience()}
+                            
                         </div>
                     </div>
                 </div>
